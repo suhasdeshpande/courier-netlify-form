@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courier Netlify Form</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="images/logo.png" alt="Treva" class="logo" />
+      </header>
+      <main>
+        <h1>Contact Form</h1>
+        <form id="contact" name="contact" method="POST" data-netlify="true">
+          <label>Your Name: <input type="text" name="name" /></label>
+
+          <label>Your Email: <input type="email" name="email" /></label>
+
+          <label
+            >Your Role:
+            <select name="role[]" multiple>
+              <option value="traveller">Traveller</option>
+              <option value="agent">Travel Agent</option>
+              <option value="representative">Representative</option>
+              <option value="other">Something Else</option>
+            </select></label
+          >
+
+          <label>Message: <textarea name="message"></textarea></label>
+
+          <button type="submit">Send</button>
+        </form>
+      </main>
+      <footer>
+        Made with
+        <a href="https://courier.com"
+          ><img
+            src="/images/courier-heart.svg"
+            alt="Courier Logo"
+            class="footer-logo"
+        /></a>
+        for you
+      </footer>
+    </div>
+    <script type="text/javascript">
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        let myForm = document.getElementById("contact");
+        let formData = new FormData(myForm);
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        })
+          .then(() => {
+            alert("Form successfully submitted");
+            myForm.reset();
+          })
+          .catch((error) => alert(error));
+      };
+      document.querySelector("form").addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

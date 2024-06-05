@@ -1,0 +1,9 @@
+[build]
+  publish = "publish"
+  functions = "functions/"
+
+[template.environment]
+  COURIER_AUTH_TOKEN = "Courier auth token (required)"
+  COURIER_EVENT = "Notification ID or mapped event (optional)"
+  COURIER_LIST = "Destination list ID (list or recipient required)"
+  COURIER_RECIPIENT = "Destination recipient ID (recipient or list required)"
