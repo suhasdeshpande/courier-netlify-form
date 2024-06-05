@@ -1,6 +1,6 @@
 # Courier Netlify Form
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/94a7f325-841d-4ee5-bfb4-9eb5e9304791/deploy-status)](https://app.netlify.com/sites/courier-netlify-form/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe01bf41-de70-4d30-a03e-dfb8fced71b3/deploy-status)](https://app.netlify.com/sites/startling-truffle-25acf3/deploys)
 
 This is a simple html form project that can be deployed to [Netlify](https://netlify.com). It uses [Netlify Forms](https://docs.netlify.com/forms/setup/) to handle the form submission. A [Netlify Trigger Function](https://docs.netlify.com/functions/trigger-on-events/) sends the verified submission via [Courier](https://courier.com) to the specified List or Recipient.
 
